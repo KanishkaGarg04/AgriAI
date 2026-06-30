@@ -1,5 +1,5 @@
 """
-AgriAI — Crop Recommendation Module
+AgriNova AI — Crop Recommendation Module
 ==========================================
 Predicts the best crop to grow given soil & weather conditions, and gives
 a fertilizer suggestion on top of it.
@@ -18,16 +18,30 @@ Two ways to run:
        result = predict_crop(N=90, P=40, K=40, temperature=24, humidity=80, ph=6.5, rainfall=200)
 """
 import argparse
+import os
 import random
 import joblib
 import numpy as np
 import pandas as pd
+
+# Make sure fertilizer_advisor (same folder) is importable regardless of
+# where this script is run/imported from
+sys_path_dir = os.path.dirname(os.path.abspath(__file__))
+import sys
+if sys_path_dir not in sys.path:
+    sys.path.append(sys_path_dir)
+
 from fertilizer_advisor import recommend_fertilizer
 
-MODEL_PATH = "crop_model.joblib"
-ENCODER_PATH = "label_encoder.joblib"
-SCALER_PATH = "feature_scaler.joblib"
-DATA_PATH = "Crop_recommendation.csv"
+# Resolve all data/model file paths relative to THIS file's location,
+# not the current working directory — so this works whether you run
+# `python predict_crop.py` from inside this folder, or import it from
+# a backend/app.py sitting in a different folder entirely.
+_THIS_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(_THIS_DIR, "crop_model.joblib")
+ENCODER_PATH = os.path.join(_THIS_DIR, "label_encoder.joblib")
+SCALER_PATH = os.path.join(_THIS_DIR, "feature_scaler.joblib")
+DATA_PATH = os.path.join(_THIS_DIR, "Crop_recommendation.csv")
 
 FEATURES = ["N", "P", "K", "temperature", "humidity", "ph", "rainfall"]
 
