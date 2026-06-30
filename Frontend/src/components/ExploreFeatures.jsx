@@ -11,7 +11,8 @@ const features = [
 
 export default function ExploreFeatures() {
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto">
+    // Added id="capabilities" to allow navigation to this section
+    <section id="capabilities" className="py-24 px-6 max-w-7xl mx-auto">
       <h2 className="text-4xl font-black text-center mb-16">Platform Capabilities</h2>
       <div className="grid md:grid-cols-3 gap-8">
         {features.map((f, i) => (

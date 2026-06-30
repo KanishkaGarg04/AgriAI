@@ -6,7 +6,7 @@ export default function Hero() {
       <motion.div 
         initial={{ opacity: 0, x: -30 }} 
         animate={{ opacity: 1, x: 0 }} 
-        transition={{ duration: 1.2, ease: "easeOut" }} // Slower, fluid entry
+        transition={{ duration: 1.2, ease: "easeOut" }} 
       >
         <h1 className="text-6xl font-black leading-tight text-gray-900">
           Precision Agriculture, <span className="text-brand-green">Optimized.</span>
@@ -16,15 +16,20 @@ export default function Hero() {
         </p>
         <div className="flex gap-4">
           <button className="bg-brand-green text-white px-8 py-4 rounded-xl font-bold hover:bg-emerald-700 transition duration-300">View Dashboard</button>
-          <button className="border border-gray-200 px-8 py-4 rounded-xl font-bold text-gray-700 hover:bg-gray-50 transition duration-300">Explore Features</button>
+          
+          {/* UPDATED: Wrapped in an anchor tag to link to the ID we set in ExploreFeatures.jsx */}
+          <a href="/#capabilities">
+            <button className="border border-gray-200 px-8 py-4 rounded-xl font-bold text-gray-700 hover:bg-gray-50 transition duration-300">
+              Explore Features
+            </button>
+          </a>
         </div>
       </motion.div>
 
-      {/* Adding a gentle hover effect to the metric card for maturity */}
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }} 
         animate={{ opacity: 1, scale: 1 }} 
-        transition={{ duration: 1.5, ease: "easeOut" }} // Slower scale-in
+        transition={{ duration: 1.5, ease: "easeOut" }} 
         className="bg-white p-8 rounded-[2rem] shadow-2xl border border-gray-100"
       >
         <h3 className="font-bold text-lg mb-6">Real-time Farm Metrics</h3>

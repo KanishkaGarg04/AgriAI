@@ -12,7 +12,9 @@ import ClimateSmart from "./components/ClimateSmart";
 import CallToAction from "./components/CallToAction";
 import Footer from "./components/Footer";
 
+// Pages and Components
 import CropPrediction from "./pages/CropPrediction";
+import DiseaseAI from "./components/DiseaseAI";
 
 function Home() {
   return (
@@ -38,6 +40,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/crop-prediction" element={<CropPrediction />} />
+        <Route path="/disease-ai" element={<DiseaseAI />} />
       </Routes>
 
       <Footer />
