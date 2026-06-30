@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import Stats from "./components/Stats";
 import FeatureShowcase from "./components/FeatureShowcase";
 import Workflow from "./components/Workflow";
+import ExploreFeatures from "./components/ExploreFeatures";
 import AnalyticsDashboard from "./components/AnalyticsDashboard";
 import SpeakSnapSow from "./components/SpeakSnapSow";
 import ClimateSmart from "./components/ClimateSmart";
@@ -20,6 +21,7 @@ function Home() {
       <Stats />
       <FeatureShowcase />
       <Workflow />
+      <ExploreFeatures />
       <AnalyticsDashboard />
       <SpeakSnapSow />
       <ClimateSmart />
