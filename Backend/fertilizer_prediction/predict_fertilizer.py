@@ -29,16 +29,23 @@ Programmatic:
     dosage = get_dosage_for_recommendation(result, land_area_ha=2, use_organic=False)
 """
 import argparse
+import os
+import sys
 import joblib
 import numpy as np
 import pandas as pd
+
+_THIS_DIR = os.path.dirname(os.path.abspath(__file__))
+if _THIS_DIR not in sys.path:
+    sys.path.append(_THIS_DIR)
+
 from dosage_calculator import get_dosage_plan
 
-MODEL_PATH = "fertilizer_model.joblib"
-LABEL_ENCODER_PATH = "fertilizer_label_encoder.joblib"
-CROP_ENCODER_PATH = "fertilizer_crop_encoder.joblib"
-SCALER_PATH = "fertilizer_scaler.joblib"
-DATA_PATH = "Fertilizer_recommendation.csv"
+MODEL_PATH = os.path.join(_THIS_DIR, "fertilizer_model.joblib")
+LABEL_ENCODER_PATH = os.path.join(_THIS_DIR, "fertilizer_label_encoder.joblib")
+CROP_ENCODER_PATH = os.path.join(_THIS_DIR, "fertilizer_crop_encoder.joblib")
+SCALER_PATH = os.path.join(_THIS_DIR, "fertilizer_scaler.joblib")
+DATA_PATH = os.path.join(_THIS_DIR, "Fertilizer_recommendation.csv")
 
 FERTILIZER_MAP = {
     "N_deficient":    ("Urea", "Vermicompost / Farmyard Manure (FYM)"),

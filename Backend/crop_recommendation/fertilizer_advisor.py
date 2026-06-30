@@ -8,7 +8,11 @@ This is intentionally rule-based (not a separate ML model) since fertilizer
 guidance in real agronomy is reference-table-driven, not typically a
 classifier problem on these few features. Keeps it explainable for judges.
 """
+import os
 import pandas as pd
+
+_THIS_DIR = os.path.dirname(os.path.abspath(__file__))
+_DEFAULT_DATA_PATH = os.path.join(_THIS_DIR, "Crop_recommendation.csv")
 
 FERTILIZER_TIPS = {
     "N": {
@@ -25,7 +29,7 @@ FERTILIZER_TIPS = {
     }
 }
 
-def get_ideal_npk(crop_label, dataset_path="Crop_recommendation.csv"):
+def get_ideal_npk(crop_label, dataset_path=_DEFAULT_DATA_PATH):
     """Returns the average N, P, K for a given crop from the training dataset."""
     df = pd.read_csv(dataset_path)
     crop_df = df[df["label"] == crop_label]
@@ -35,7 +39,7 @@ def get_ideal_npk(crop_label, dataset_path="Crop_recommendation.csv"):
         "K": round(crop_df["K"].mean(), 1),
     }
 
-def recommend_fertilizer(user_npk, crop_label, dataset_path="Crop_recommendation.csv", tolerance=10):
+def recommend_fertilizer(user_npk, crop_label, dataset_path=_DEFAULT_DATA_PATH, tolerance=10):
     """
     user_npk: dict with keys N, P, K (the soil values the user entered)
     crop_label: the predicted crop name
