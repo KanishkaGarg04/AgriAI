@@ -32,7 +32,7 @@ export default function ComingSoon({ feature = "This Feature" }) {
 
           <p className="text-gray-500 text-lg mb-10 max-w-md mx-auto">
             Our team is actively building this module. It will be available
-            very soon as part of the AgriNova AI platform.
+            very soon as part of the KrishiMitra platform.
           </p>
 
           {/* Progress bar — decorative, shows "in progress" feel */}
