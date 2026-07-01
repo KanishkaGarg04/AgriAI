@@ -1,0 +1,4 @@
+Irrigation Advisor Model Report
+Accuracy: 1.00
+Features: moisture, humidity, temp, et
+Total samples: 13
