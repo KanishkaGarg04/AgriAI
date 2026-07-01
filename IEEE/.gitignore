@@ -1,0 +1,8 @@
+.DS_Store
+.vscode/
+ml_env/
+venv/
+__pycache__/
+*.pyc
+.env
+.ipynb_checkpoints/

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Crop Health Monitoring</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="hero">
+
+    <h1>🌿 Crop Health Monitoring</h1>
+
+    <p>
+        Upload or Scan a Leaf Image
+        to Detect Crop Diseases
+    </p>
+
+</div>
+
+<div class="card">
+
+    <input
+        type="file"
+        id="imageInput"
+        accept="image/*"
+        capture="environment"
+    >
+
+    <img
+        id="preview"
+        class="preview"
+    >
+
+    <button onclick="predictDisease()">
+        Analyze Crop
+    </button>
+
+    <div id="result"></div>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
+
+

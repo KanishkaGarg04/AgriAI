@@ -1,0 +1,60 @@
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f4faf5;
+}
+
+.hero{
+    background:linear-gradient(
+        135deg,
+        #0f9d58,
+        #34a853
+    );
+
+    color:white;
+    text-align:center;
+    padding:40px;
+}
+
+.hero h1{
+    font-size:40px;
+}
+
+.card{
+    width:700px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.preview{
+    width:100%;
+    max-height:400px;
+    object-fit:contain;
+    margin-top:20px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    background:#16a34a;
+    color:white;
+    font-size:18px;
+    margin-top:20px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#15803d;
+}
+
+#result{
+    margin-top:25px;
+    padding:20px;
+    background:#f0fff4;
+    border-radius:10px;
+}
