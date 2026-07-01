@@ -88,7 +88,7 @@ def predict_irrigation():
         prediction = 1 # Temporary placeholder
 
         water_need_mm = max(0, int((60 - moisture) * 1.5))
-        drip_water_need = round(water_need_mm / 0.90, 1)
+        drip_water_need = round(water_need_mm * 0.90, 1)
 
         # Advanced Crop & Soil Advice Database
         advice_db = {
