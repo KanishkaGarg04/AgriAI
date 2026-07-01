@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   Sprout,
@@ -8,9 +9,12 @@ import {
   FlaskConical,
   Leaf,
   Loader2,
+  ArrowRight,
 } from "lucide-react";
 
 export default function CropPrediction() {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     N: "",
     P: "",
@@ -432,6 +436,22 @@ export default function CropPrediction() {
 
                 </div>
 
+              </div>
+
+              {/* Link to dedicated fertilizer prediction page */}
+              <div className="mt-8 text-center">
+                <button
+                  type="button"
+                  onClick={() =>
+                    navigate("/fertilizer-prediction", {
+                      state: { crop: result.recommended_crop },
+                    })
+                  }
+                  className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-full font-semibold transition"
+                >
+                  Get Exact Fertilizer Dosage
+                  <ArrowRight size={18} />
+                </button>
               </div>
 
             </div>

@@ -12,8 +12,8 @@ import ClimateSmart from "./components/ClimateSmart";
 import CallToAction from "./components/CallToAction";
 import Footer from "./components/Footer";
 
-// Pages and Components
 import CropPrediction from "./pages/CropPrediction";
+import FertilizerPrediction from "./pages/FertilizerPrediction";
 import DiseaseAI from "./components/DiseaseAI";
 
 function Home() {
@@ -40,6 +40,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/crop-prediction" element={<CropPrediction />} />
+        <Route path="/fertilizer-prediction" element={<FertilizerPrediction />} />
         <Route path="/disease-ai" element={<DiseaseAI />} />
       </Routes>
 

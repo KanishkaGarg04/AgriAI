@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const features = [
   { title: "Market Price Prediction", desc: "LSTM-powered forecasting for maximum harvest ROI.", link: "/features/price-prediction" },
-  { title: "Fertilizer Recommendation", desc: "AI-optimized nutrient balancing for soil health.", link: "/features/fertilizer-advisor" },
+  { title: "Fertilizer Recommendation", desc: "AI-optimized nutrient balancing for soil health.", link: "/fertilizer-prediction" },
   { title: "AI Voice Assistant", desc: "Multilingual, hands-free farming support.", link: "/features/voice-assistant" },
   { title: "Crop Health Monitoring", desc: "YOLOv8 real-time disease and pest detection.", link: "/features/health-monitor" },
   { title: "Smart Irrigation Advisor", desc: "Hyper-local weather & moisture-based control.", link: "/features/irrigation" },
